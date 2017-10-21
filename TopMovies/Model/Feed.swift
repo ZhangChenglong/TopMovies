@@ -10,5 +10,11 @@ import UIKit
 import EVReflection
 
 class Feed: EVObject {
-    var entry: [Movie]?
+    var movies: [Movie]?
+    
+    override func propertyMapping() -> [(keyInObject: String?, keyInResource: String?)] {
+        return [
+            (keyInObject: "movies", keyInResource: "entry"),
+        ]
+    }
 }
